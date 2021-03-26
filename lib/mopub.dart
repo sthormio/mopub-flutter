@@ -20,6 +20,7 @@ class MoPub {
       if (isAvailable) {
         return isAvailable;
       } else {
+        await Future.delayed(Duration(seconds: 1));
         isAvailable = await _channel.invokeMethod(INIT_METHOD, initValues);
       }
 
